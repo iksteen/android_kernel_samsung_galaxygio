@@ -142,9 +142,9 @@ int load_565rle_image_onfb( char *filename, int start_x, int start_y)
 				c_pixel = draw_pixel;
 
 			// draw pixels
-           #if 1 // minhyo-rgb888
+           #if defined(CONFIG_FB_MSM_DEFAULT_DEPTH_ARGB8888) || defined(CONFIG_FB_MSM_DEFAULT_DEPTH_RGBA8888) // minhyo-rgb888
 		memset16_rgb8888(&p_line[sp*2], ptr[1], c_pixel<<1);
-           #else
+           #else // CONFIG_FB_MSM_DEFAULT_DEPTH_RGB565
            memset16(&p_line[sp], ptr[1], c_pixel<<1);
            #endif
 			
