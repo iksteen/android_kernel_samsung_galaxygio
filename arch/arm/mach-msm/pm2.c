@@ -1852,13 +1852,13 @@ static int msm_reboot_call
 			restart_reason = 0x6f656d00 | code;
 		} else {
 #if defined(CONFIG_MACH_EUROPA) || defined(CONFIG_MACH_CALLISTO) || defined(CONFIG_MACH_COOPER) || defined(CONFIG_MACH_GIO) || defined(CONFIG_MACH_BENI) || defined(CONFIG_MACH_TASS) || defined(CONFIG_MACH_TASSDT) || defined(CONFIG_MACH_LUCAS) 
-			set_recovery_mode();
+			set_recovery_mode_done();
 #endif
 			restart_reason = 0x77665501;
 		}
-        } else {
+	} else {
 #if defined(CONFIG_MACH_EUROPA) || defined(CONFIG_MACH_CALLISTO) || defined(CONFIG_MACH_COOPER) || defined(CONFIG_MACH_GIO) || defined(CONFIG_MACH_BENI) || defined(CONFIG_MACH_TASS) || defined(CONFIG_MACH_TASSDT) || defined(CONFIG_MACH_LUCAS) 
-		set_recovery_mode();
+		set_recovery_mode_done();
 #endif
 	}
 	return NOTIFY_DONE;
